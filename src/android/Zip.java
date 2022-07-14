@@ -127,7 +127,7 @@ public class Zip extends CordovaPlugin {
                 } else {
                     File file = new File(outputDirectory + compressedName);
                     file.getParentFile().mkdirs();
-                    if(file.exists() || file.createNewFile() || file.getCanonicalPath().startsWith(outputDirectory)){
+                    if(file.exists() || file.createNewFile()){
                         Log.w("Zip", "extracting: " + file.getPath());
                         FileOutputStream fout = new FileOutputStream(file);
                         int count;
